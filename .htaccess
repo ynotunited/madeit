@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the requested file exists inside the public/ folder, serve it directly
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # If the request is not for a physical file or directory in the root,
+    # pass it to public/index.php for routing
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/index.php [L]
+
+    # Rewrite empty root request to public/index.php
+    RewriteRule ^$ public/index.php [L]
+</IfModule>

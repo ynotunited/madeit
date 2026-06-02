@@ -1,0 +1,286 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Mono:wght@400;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  .bg{background:var(--color-background-primary);font-family:'DM Sans',sans-serif;color:var(--color-text-primary);padding:2rem 0 3rem}
+  .section{margin-bottom:2.5rem}
+  .label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:.75rem}
+  .divider{height:.5px;background:var(--color-border-tertiary);margin:2rem 0}
+  
+  /* HERO */
+  .hero{background:#0D1117;border-radius:var(--border-radius-lg);padding:2.5rem 2rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;gap:1rem}
+  .hero-logo{display:flex;flex-direction:column;gap:4px}
+  .logo-text{font-family:'DM Sans',sans-serif;font-size:36px;font-weight:300;letter-spacing:-.02em;color:#fff}
+  .logo-text span{font-weight:600;color:#4A8FE8}
+  .logo-sub{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.4);text-transform:lowercase}
+  .hero-meta{text-align:right}
+  .hero-meta p{font-size:11px;color:rgba(255,255,255,.3);font-family:'Space Mono',monospace;letter-spacing:.05em}
+
+  /* COLORS */
+  .color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .color-card{border-radius:var(--border-radius-md);overflow:hidden;border:.5px solid var(--color-border-tertiary)}
+  .color-swatch{height:72px}
+  .color-info{padding:10px 12px;background:var(--color-background-primary)}
+  .color-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+  .color-hex{font-family:'Space Mono',monospace;font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+  .color-use{font-size:11px;color:var(--color-text-secondary);margin-top:4px}
+
+  /* TYPOGRAPHY */
+  .type-stack{display:flex;flex-direction:column;gap:16px}
+  .type-row{display:flex;align-items:baseline;gap:16px;padding:14px 0;border-bottom:.5px solid var(--color-border-tertiary)}
+  .type-row:last-child{border-bottom:none}
+  .type-meta{min-width:160px}
+  .type-meta .t-role{font-size:12px;color:var(--color-text-secondary)}
+  .type-meta .t-spec{font-family:'Space Mono',monospace;font-size:10px;color:var(--color-text-secondary);margin-top:2px}
+  .type-sample{flex:1}
+
+  /* LOGO VARIATIONS */
+  .logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .logo-box{border-radius:var(--border-radius-md);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:4px;border:.5px solid var(--color-border-tertiary)}
+  .logo-box.dark{background:#0D1117}
+  .logo-box.light{background:#F0F4FA}
+  .logo-box.blue{background:#4A8FE8}
+  .logo-box.mono{background:#F7F7F5}
+  .lv-text{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:300;letter-spacing:-.02em}
+  .lv-text span{font-weight:600}
+  .lv-sub{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:lowercase}
+  .logo-label{font-size:11px;margin-top:8px}
+
+  /* TONE TAGS */
+  .tone-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .tone-tag{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;border:.5px solid var(--color-border-secondary);color:var(--color-text-secondary)}
+  .tone-tag.primary{background:#4A8FE8;color:#fff;border-color:#4A8FE8}
+
+  /* SPACING */
+  .spacing-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .spacing-box{background:#4A8FE8;border-radius:2px;height:16px;opacity:.8}
+  .spacing-label{font-family:'Space Mono',monospace;font-size:11px;color:var(--color-text-secondary)}
+
+  /* DO/DON'T */
+  .rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .rule-card{padding:1rem 1.25rem;border-radius:var(--border-radius-md);border:.5px solid var(--color-border-tertiary)}
+  .rule-card.do{border-left:2px solid #4A8FE8}
+  .rule-card.dont{border-left:2px solid #E24B4A}
+  .rule-head{font-size:11px;font-weight:500;margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+  .rule-head.do{color:#4A8FE8}
+  .rule-head.dont{color:#E24B4A}
+  .rule-item{font-size:13px;color:var(--color-text-secondary);margin-bottom:4px;padding-left:12px;position:relative}
+  .rule-item::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%}
+  .rule-item.do::before{background:#4A8FE8}
+  .rule-item.dont::before{background:#E24B4A}
+</style>
+
+<div class="bg">
+
+  <div class="hero">
+    <div class="hero-logo">
+      <div class="logo-text">made<span>IT</span></div>
+      <div class="logo-sub">innovation and beyond</div>
+    </div>
+    <div class="hero-meta">
+      <p>Brand Guide</p>
+      <p style="margin-top:4px;opacity:.5">v1.0 · 2025</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Brand Identity</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <div style="padding:1rem 1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Brand name</div>
+        <div style="font-size:15px;font-weight:500">madeIT</div>
+      </div>
+      <div style="padding:1rem 1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Tagline</div>
+        <div style="font-size:14px;font-weight:400;font-style:italic">innovation and beyond</div>
+      </div>
+      <div style="padding:1rem 1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Industry</div>
+        <div style="font-size:15px;font-weight:500">Technology / IT Solutions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Color System</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#4A8FE8"></div>
+        <div class="color-info">
+          <div class="color-name">Signal Blue</div>
+          <div class="color-hex">#4A8FE8</div>
+          <div class="color-use">Primary · CTAs · Highlights</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#2D64C8"></div>
+        <div class="color-info">
+          <div class="color-name">Deep Blue</div>
+          <div class="color-hex">#2D64C8</div>
+          <div class="color-use">Hover states · Accents</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0D1117"></div>
+        <div class="color-info">
+          <div class="color-name">Void Black</div>
+          <div class="color-hex">#0D1117</div>
+          <div class="color-use">Dark bg · Logo canvas</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#1C2333"></div>
+        <div class="color-info">
+          <div class="color-name">Slate Navy</div>
+          <div class="color-hex">#1C2333</div>
+          <div class="color-use">Cards · Sections on dark</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFFFF;border:.5px solid #eee"></div>
+        <div class="color-info">
+          <div class="color-name">Pure White</div>
+          <div class="color-hex">#FFFFFF</div>
+          <div class="color-use">Light mode · Body copy bg</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#6B7280"></div>
+        <div class="color-info">
+          <div class="color-name">Neutral Gray</div>
+          <div class="color-hex">#6B7280</div>
+          <div class="color-use">Subtext · Borders · Muted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Typography</div>
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="t-role">Display / Logo</div>
+          <div class="t-spec">DM Sans · Light 300 + Semi 600</div>
+        </div>
+        <div class="type-sample" style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:300;letter-spacing:-.02em">made<span style="font-weight:600;color:#4A8FE8">IT</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="t-role">Heading H1</div>
+          <div class="t-spec">DM Sans · 500 · 32px</div>
+        </div>
+        <div class="type-sample" style="font-family:'DM Sans',sans-serif;font-size:28px;font-weight:500">We build what's next.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="t-role">Heading H2</div>
+          <div class="t-spec">DM Sans · 500 · 22px</div>
+        </div>
+        <div class="type-sample" style="font-family:'DM Sans',sans-serif;font-size:20px;font-weight:500">Our services</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="t-role">Body</div>
+          <div class="t-spec">DM Sans · 400 · 16px · 1.7</div>
+        </div>
+        <div class="type-sample" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:var(--color-text-secondary)">We help organizations move faster with technology that actually works — from infrastructure to product, and everything in between.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="t-role">Code / Labels</div>
+          <div class="t-spec">Space Mono · 400 · 11–12px</div>
+        </div>
+        <div class="type-sample" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--color-text-secondary);letter-spacing:.06em">innovation and beyond · v2.4.1 · EST. 2020</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Logo Variations</div>
+    <div class="logo-grid">
+      <div class="logo-box dark">
+        <div class="lv-text" style="color:#fff">made<span style="color:#4A8FE8">IT</span></div>
+        <div class="lv-sub" style="color:rgba(255,255,255,.35)">innovation and beyond</div>
+        <div class="logo-label" style="color:rgba(255,255,255,.3);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em">PRIMARY · Dark canvas</div>
+      </div>
+      <div class="logo-box light">
+        <div class="lv-text" style="color:#0D1117">made<span style="color:#4A8FE8">IT</span></div>
+        <div class="lv-sub" style="color:#6B7280">innovation and beyond</div>
+        <div class="logo-label" style="color:#9CA3AF;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em">SECONDARY · Light canvas</div>
+      </div>
+      <div class="logo-box blue">
+        <div class="lv-text" style="color:#fff">made<span style="font-weight:700;color:rgba(255,255,255,.95)">IT</span></div>
+        <div class="lv-sub" style="color:rgba(255,255,255,.6)">innovation and beyond</div>
+        <div class="logo-label" style="color:rgba(255,255,255,.5);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em">REVERSED · Brand blue</div>
+      </div>
+      <div class="logo-box mono">
+        <div class="lv-text" style="color:#1C1C1C">made<span style="font-weight:700;color:#1C1C1C">IT</span></div>
+        <div class="lv-sub" style="color:#888">innovation and beyond</div>
+        <div class="logo-label" style="color:#bbb;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.08em">MONOCHROME · Print / 1-color</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Brand Tone</div>
+    <div class="tone-grid">
+      <div class="tone-tag primary">Innovative</div>
+      <div class="tone-tag">Confident</div>
+      <div class="tone-tag">Direct</div>
+      <div class="tone-tag">Technical</div>
+      <div class="tone-tag">Forward-thinking</div>
+      <div class="tone-tag">Minimal</div>
+      <div class="tone-tag">Reliable</div>
+      <div class="tone-tag">Modern</div>
+    </div>
+    <div style="margin-top:1rem;font-size:13px;color:var(--color-text-secondary);font-style:italic;padding:1rem 1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:2px solid #4A8FE8">
+      "We don't just keep up with technology — we move before it does."
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Spacing Scale</div>
+    <div style="padding:1rem 0">
+      <div class="spacing-row"><div class="spacing-box" style="width:4px"></div><div class="spacing-label">4px · xs · tight gaps</div></div>
+      <div class="spacing-row"><div class="spacing-box" style="width:8px"></div><div class="spacing-label">8px · sm · icon padding</div></div>
+      <div class="spacing-row"><div class="spacing-box" style="width:16px"></div><div class="spacing-label">16px · md · element gaps</div></div>
+      <div class="spacing-row"><div class="spacing-box" style="width:24px"></div><div class="spacing-label">24px · lg · section padding</div></div>
+      <div class="spacing-row"><div class="spacing-box" style="width:40px"></div><div class="spacing-label">40px · xl · section spacing</div></div>
+      <div class="spacing-row"><div class="spacing-box" style="width:64px"></div><div class="spacing-label">64px · 2xl · hero / hero padding</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="label">Usage Rules</div>
+    <div class="rules-grid">
+      <div class="rule-card do">
+        <div class="rule-head do">Do</div>
+        <div class="rule-item do" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Use Signal Blue on dark for primary CTAs</div>
+        <div class="rule-item do" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Keep "IT" visually distinct — weight or color</div>
+        <div class="rule-item do" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Maintain whitespace around the logo</div>
+        <div class="rule-item do" style="font-size:13px;color:var(--color-text-secondary);padding-left:12px;position:relative">Use Space Mono for data, labels and tagline</div>
+      </div>
+      <div class="rule-card dont">
+        <div class="rule-head dont">Don't</div>
+        <div class="rule-item dont" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Stretch or distort the logo</div>
+        <div class="rule-item dont" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Use low-contrast blue on light gray</div>
+        <div class="rule-item dont" style="font-size:13px;color:var(--color-text-secondary);margin-bottom:6px;padding-left:12px;position:relative">Stack more than 2 font weights on one element</div>
+        <div class="rule-item dont" style="font-size:13px;color:var(--color-text-secondary);padding-left:12px;position:relative">Use the monochrome logo on colored backgrounds</div>
+      </div>
+    </div>
+  </div>
+
+</div>
