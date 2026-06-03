@@ -57,9 +57,15 @@ class ContactController {
             $intent = 'General inquiry';
         }
 
-        $db = Database::getConnection();
-        $stmt = $db->prepare("INSERT INTO leads (name, email, intent, category, message, source) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$name, $email, $intent, $category, $message, $source]);
+        try {
+            $db = Database::getConnection();
+            if (Database::tableExists('leads')) {
+                $stmt = $db->prepare("INSERT INTO leads (name, email, intent, category, message, source) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$name, $email, $intent, $category, $message, $source]);
+            }
+        } catch (Throwable $e) {
+            // Don't fail the user-facing flow if persistence is unavailable.
+        }
 
         $this->respond(true, 'Thanks, we received your message', 200, '/contact?sent=1');
     }
