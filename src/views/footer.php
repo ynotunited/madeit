@@ -102,6 +102,23 @@
 
         <script>
             (function() {
+                const mobileToggle = document.querySelector('.hero-mobile-toggle');
+                const mobileMenu = document.getElementById('heroMobileMenu');
+                if (mobileToggle && mobileMenu) {
+                    mobileToggle.addEventListener('click', function() {
+                        const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+                        mobileToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                        mobileMenu.hidden = expanded;
+                    });
+
+                    mobileMenu.querySelectorAll('a').forEach((link) => {
+                        link.addEventListener('click', function() {
+                            mobileToggle.setAttribute('aria-expanded', 'false');
+                            mobileMenu.hidden = true;
+                        });
+                    });
+                }
+
                 const form = document.getElementById('footerSubscribeForm');
                 if (!form) return;
 

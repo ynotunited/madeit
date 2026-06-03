@@ -4,7 +4,7 @@ $stats = [
     ['value' => 'Problem-first', 'label' => 'Our approach'],
     ['value' => 'Always', 'label' => 'Useful by design'],
 ];
-$aboutImageUrl = 'https://images.pexels.com/photos/36764802/pexels-photo-36764802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
+$aboutImageUrl = '/images/about-office.jpg';
 ?>
 
 <section class="about-page">
@@ -30,7 +30,7 @@ $aboutImageUrl = 'https://images.pexels.com/photos/36764802/pexels-photo-3676480
         <div class="ab-story-visual" aria-label="MadeIT team at work">
             <div class="ab-story-visual-inner">
                 <div class="ab-story-visual-image">
-                    <img src="/images/about-office.jpg" alt="MadeIT team collaborating in a modern office" class="ab-story-visual-photo">
+                    <img src="<?= htmlspecialchars($aboutImageUrl, ENT_QUOTES) ?>" alt="MadeIT team collaborating in a modern office" class="ab-story-visual-photo">
                 </div>
                 <div class="ab-visual-badge ab-visual-badge-top">
                     <span>MadeIT Ecosystem</span>
