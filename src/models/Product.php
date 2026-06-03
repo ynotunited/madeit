@@ -113,7 +113,7 @@ class Product {
         try {
             $db = Database::getConnection();
             self::ensureSeedData($db);
-            $stmt = $db->prepare("SELECT * FROM products WHERE status != 'disabled' ORDER BY CASE WHEN slug = 'buildledger' THEN 0 WHEN status = 'live' THEN 1 WHEN status = 'beta' THEN 2 ELSE 3 END, id DESC");
+            $stmt = $db->prepare("SELECT * FROM products WHERE status != 'disabled' ORDER BY CASE WHEN status = 'live' THEN 0 WHEN status = 'beta' THEN 1 WHEN status = 'coming soon' THEN 2 WHEN status = 'building' THEN 3 ELSE 4 END, CASE WHEN slug = 'buildledger' THEN 0 ELSE 1 END, id DESC");
             $stmt->execute();
             return $stmt->fetchAll();
         } catch (Throwable $e) {
