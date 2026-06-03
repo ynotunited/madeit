@@ -29,8 +29,8 @@ $aboutImageUrl = 'https://images.pexels.com/photos/36764802/pexels-photo-3676480
 
         <div class="ab-story-visual" aria-label="MadeIT team at work">
             <div class="ab-story-visual-inner">
-                <div class="ab-story-visual-image" style="width:100%;height:100%;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch;">
-                    <img src="<?= htmlspecialchars($aboutImageUrl, ENT_QUOTES) ?>" alt="MadeIT team collaborating in a modern office" class="ab-story-visual-photo" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;border-radius:0 0 20px 20px;box-shadow:0 18px 45px rgba(13,17,23,0.14);filter:saturate(0.95) contrast(1.02);">
+                <div class="ab-story-visual-image">
+                    <img src="/images/about-office.jpg" alt="MadeIT team collaborating in a modern office" class="ab-story-visual-photo">
                 </div>
                 <div class="ab-visual-badge ab-visual-badge-top">
                     <span>MadeIT Ecosystem</span>
