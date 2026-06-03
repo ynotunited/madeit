@@ -191,12 +191,8 @@
             const data = await response.json().catch(() => ({}));
             if (!response.ok || !data.success) throw new Error(data.message || 'Unable to send your message');
 
-            window.localStorage.removeItem('madeit.contact.name');
-            window.localStorage.removeItem('madeit.contact.email');
-            window.localStorage.removeItem('madeit.contact.message');
-            form.reset();
-            update();
             submit.textContent = 'Sent';
+            submit.disabled = true;
         } catch (err) {
             submit.textContent = 'Send Message';
             submit.disabled = false;
