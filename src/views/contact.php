@@ -191,7 +191,7 @@
             const data = await response.json().catch(() => ({}));
             if (!response.ok || !data.success) throw new Error(data.message || 'Unable to send your message');
 
-            submit.textContent = 'Sent';
+            submit.textContent = 'Thanks! We’ll reply soon.';
             submit.disabled = true;
         } catch (err) {
             submit.textContent = 'Send Message';
