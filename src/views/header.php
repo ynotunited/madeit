@@ -237,6 +237,52 @@
             </div>
         </main>
     </div>
+    <script>
+        (function() {
+            const toggle = document.querySelector('.hero-mobile-toggle');
+            const menu = document.getElementById('heroMobileMenu');
+            if (!toggle || !menu) return;
+
+            const menuIcon = toggle.querySelector('.hero-mobile-icon--menu');
+            const closeIcon = toggle.querySelector('.hero-mobile-icon--close');
+
+            function setOpen(isOpen) {
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                menu.hidden = !isOpen;
+                if (menuIcon) {
+                    menuIcon.style.display = isOpen ? 'none' : 'block';
+                }
+                if (closeIcon) {
+                    closeIcon.style.display = isOpen ? 'block' : 'none';
+                }
+            }
+
+            toggle.addEventListener('click', function() {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                setOpen(!isOpen);
+            });
+
+            menu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    setOpen(false);
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                if (menu.hidden) return;
+                if (menu.contains(event.target) || toggle.contains(event.target)) return;
+                setOpen(false);
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    setOpen(false);
+                }
+            });
+
+            setOpen(false);
+        })();
+    </script>
 <?php else: ?>
     <header class="site-navbar">
         <a href="/" class="hero-logo">
