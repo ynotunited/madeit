@@ -799,6 +799,10 @@ h2 {
   align-items: stretch;
 }
 
+.contact-points--stack {
+  grid-template-columns: 1fr;
+}
+
 .contact-point {
   padding: 0.95rem;
   border-radius: 18px;
