@@ -8,20 +8,20 @@
                 We’ll help you move from idea to launch with clarity.
             </p>
 
-            <div class="contact-points contact-points--stack">
-                <div class="contact-point">
+            <div class="contact-points contact-points--stack" style="display:flex;flex-direction:column;gap:0.85rem;">
+                <div class="contact-point" style="width:100%;">
                     <span class="contact-point-label">Email</span>
                     <a href="mailto:hello@madeitcodes.online">hello@madeitcodes.online</a>
                 </div>
-                <div class="contact-point">
+                <div class="contact-point" style="width:100%;">
                     <span class="contact-point-label">Nigeria</span>
                     <a href="tel:+2347033864782">+234 703 386 4782</a>
                 </div>
-                <div class="contact-point">
+                <div class="contact-point" style="width:100%;">
                     <span class="contact-point-label">Liberia</span>
                     <a href="tel:+231770727616">+231 77 072 7616</a>
                 </div>
-                <div class="contact-point">
+                <div class="contact-point" style="width:100%;">
                     <span class="contact-point-label">Response</span>
                     <span>Usually within 1 business day</span>
                 </div>
